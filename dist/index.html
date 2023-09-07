@@ -9,55 +9,72 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
   </head>
-  <body class="bg-slate-300 flex flex-col">
-    <header class="bg-amber-300 p-5">HEADER</header>
+  <body class="bg-slate-300 min-h-screen overflow-y-hidden">
+    <header class="bg-amber-300 p-5 text-5xl">Do It</header>
     <div class="flex" id="content">
-      <nav class="flex flex-col justify-between bg-red-200 p-8 w-80">
-        <div>
-          <ul class="mb-10 space-y-5 text-xl" id="default-nav">
-            <li class="flex items-center">
-              <span class="me-3 material-symbols-outlined"> inbox </span>Inbox
-            </li>
-            <li class="flex items-center">
-              <span class="me-3 material-symbols-outlined"> today </span>Today
-            </li>
-            <li class="flex items-center">
-              <span class="me-3 material-symbols-outlined"> date_range </span
-              >Next 7 days
-            </li>
-            <li class="flex items-center">
-              <span class="me-3 material-symbols-outlined"> event_busy </span
-              >Important
-            </li>
-            <li class="flex items-center">
-              <span class="me-3 material-symbols-outlined">
-                event_available </span
-              >Completed
-            </li>
-          </ul>
-          <div id="projects-nav">
-            <div class="flex items-center justify-between text-xl font-medium">
-              Projects
-              <span class="material-symbols-outlined cursor-pointer">
-                add
-              </span>
-            </div>
+      <nav
+        class="overflow-auto bg-red-200 pt-0 px-0 md:pt-8 md:px-8 w-0 md:w-80 h-[calc(100vh-50px)] transition-all"
+      >
+        <ul class="mb-10 space-y-5 text-xl" id="default-nav">
+          <li
+            class="display-item flex items-center cursor-pointer hover:bg-slate-200 rounded-xl"
+            data-display="inbox"
+          >
+            <span class="me-3 material-symbols-outlined"> inbox </span>Inbox
+          </li>
+          <li
+            class="display-item flex items-center cursor-pointer hover:bg-slate-200 rounded-xl"
+            data-display="today"
+          >
+            <span class="me-3 material-symbols-outlined"> today </span>Today
+          </li>
+          <li
+            class="display-item flex items-center cursor-pointer hover:bg-slate-200 rounded-xl"
+            data-display="weekly"
+          >
+            <span class="me-3 material-symbols-outlined"> date_range </span>Next
+            7 days
+          </li>
+          <li
+            class="display-item flex items-center cursor-pointer hover:bg-slate-200 rounded-xl"
+            data-display="important"
+          >
+            <span class="me-3 material-symbols-outlined"> event_busy </span
+            >Important
+          </li>
+          <li
+            class="display-item flex items-center cursor-pointer hover:bg-slate-200 rounded-xl"
+            data-display="completed"
+          >
+            <span class="me-3 material-symbols-outlined"> event_available </span
+            >Completed
+          </li>
+        </ul>
+        <div class="min-h-[calc(100vh-421px)]" id="projects-nav">
+          <div class="flex items-center justify-between text-xl font-medium">
+            Projects
+            <span class="material-symbols-outlined cursor-pointer project-add">
+              add
+            </span>
           </div>
           <hr />
-          <ul class="mt-5" id="project-list">
-            <li>
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined"> folder </span>
-                <span>Project 1</span>
-                <div>
-                  <span class="material-symbols-outlined me-1"> edit </span>
-                  <span class="material-symbols-outlined"> delete </span>
-                </div>
+          <ul class="mt-5 mb-10 space-y-4" id="project-list">
+            <li
+              class="display-item flex items-center justify-between hover:bg-slate-300 cursor-pointer rounded-xl p-3 transition-all"
+              data-index="3"
+            >
+              <span class="material-symbols-outlined"> folder </span>
+              Project 1
+              <div>
+                <span class="material-symbols-outlined me-1"> edit </span>
+                <span class="material-symbols-outlined text-red-500">
+                  delete
+                </span>
               </div>
             </li>
           </ul>
         </div>
-        <footer class="border-2 p-4 border-violet-500">
+        <footer class="-mx-8 text-center bg-violet-300 p-2">
           <p>
             Created by
             <a
@@ -69,7 +86,38 @@
           </p>
         </footer>
       </nav>
-      <main class="flex-1 bg-blue-300 p-3">MAIN</main>
+      <main class="flex-1 bg-blue-300 p-10">
+        <ul class="space-y-3" id="todo-item-list">
+          <li
+            class="flex items-center justify-between hover:bg-slate-300 cursor-pointer rounded-xl p-3 transition-all"
+          >
+            <div class="flex items-center">
+              <span class="material-symbols-outlined me-2"> task_alt </span>
+              <p class="overflow-hidden">Task 1</p>
+            </div>
+            <div class="flex-shrink-0">
+              <span class="material-symbols-outlined me-1"> edit </span>
+              <span class="material-symbols-outlined text-red-500">
+                delete
+              </span>
+            </div>
+          </li>
+          <li
+            class="flex items-center justify-between hover:bg-slate-300 cursor-pointer rounded-xl p-3 transition-all"
+          >
+            <div class="flex items-center">
+              <span class="material-symbols-outlined me-2"> task_alt </span>
+              <p class="overflow-hidden">Task 2</p>
+            </div>
+            <div class="flex-shrink-0">
+              <span class="material-symbols-outlined me-1"> edit </span>
+              <span class="material-symbols-outlined text-red-500">
+                delete
+              </span>
+            </div>
+          </li>
+        </ul>
+      </main>
     </div>
     <script src="bundle.js"></script>
   </body>
